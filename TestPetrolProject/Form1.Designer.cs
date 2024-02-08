@@ -42,6 +42,14 @@
 			this.label2 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
+			this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+			this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
+			this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+			this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+			this.TxtPlaka = new System.Windows.Forms.TextBox();
+			this.label22 = new System.Windows.Forms.Label();
+			this.BtnDepoDoldur = new System.Windows.Forms.Button();
 			this.label14 = new System.Windows.Forms.Label();
 			this.label13 = new System.Windows.Forms.Label();
 			this.Txtgazfiyat = new System.Windows.Forms.TextBox();
@@ -49,38 +57,30 @@
 			this.TxtEurodizelfiyat = new System.Windows.Forms.TextBox();
 			this.Txtkursunsuz97fiyat = new System.Windows.Forms.TextBox();
 			this.Txtkursunsuz95fiyat = new System.Windows.Forms.TextBox();
-			this.BtnDepoDoldur = new System.Windows.Forms.Button();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
-			this.progressBar1 = new System.Windows.Forms.ProgressBar();
-			this.progressBar2 = new System.Windows.Forms.ProgressBar();
-			this.progressBar3 = new System.Windows.Forms.ProgressBar();
-			this.progressBar4 = new System.Windows.Forms.ProgressBar();
-			this.progressBar5 = new System.Windows.Forms.ProgressBar();
-			this.label15 = new System.Windows.Forms.Label();
 			this.LblGazLitre = new System.Windows.Forms.Label();
 			this.LblYeniProDizelLitre = new System.Windows.Forms.Label();
 			this.LblEuroDizelLitre = new System.Windows.Forms.Label();
 			this.LblKursunsuz97litre = new System.Windows.Forms.Label();
 			this.LblKursunsuz95litre = new System.Windows.Forms.Label();
+			this.label15 = new System.Windows.Forms.Label();
+			this.progressBar5 = new System.Windows.Forms.ProgressBar();
+			this.progressBar4 = new System.Windows.Forms.ProgressBar();
+			this.progressBar3 = new System.Windows.Forms.ProgressBar();
+			this.progressBar2 = new System.Windows.Forms.ProgressBar();
+			this.progressBar1 = new System.Windows.Forms.ProgressBar();
 			this.groupBox4 = new System.Windows.Forms.GroupBox();
-			this.label21 = new System.Windows.Forms.Label();
-			this.label22 = new System.Windows.Forms.Label();
-			this.TxtPlaka = new System.Windows.Forms.TextBox();
 			this.LblKasaText = new System.Windows.Forms.Label();
-			this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-			this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-			this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-			this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
-			this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
+			this.label21 = new System.Windows.Forms.Label();
 			this.groupBox1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
-			this.groupBox3.SuspendLayout();
-			this.groupBox4.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+			this.groupBox3.SuspendLayout();
+			this.groupBox4.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// groupBox1
@@ -234,6 +234,97 @@
 			this.groupBox2.TabIndex = 1;
 			this.groupBox2.TabStop = false;
 			// 
+			// numericUpDown5
+			// 
+			this.numericUpDown5.Location = new System.Drawing.Point(16, 211);
+			this.numericUpDown5.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+			this.numericUpDown5.Name = "numericUpDown5";
+			this.numericUpDown5.Size = new System.Drawing.Size(120, 30);
+			this.numericUpDown5.TabIndex = 20;
+			this.numericUpDown5.ValueChanged += new System.EventHandler(this.numericUpDown5_ValueChanged);
+			// 
+			// numericUpDown3
+			// 
+			this.numericUpDown3.Location = new System.Drawing.Point(16, 138);
+			this.numericUpDown3.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+			this.numericUpDown3.Name = "numericUpDown3";
+			this.numericUpDown3.Size = new System.Drawing.Size(120, 30);
+			this.numericUpDown3.TabIndex = 19;
+			this.numericUpDown3.ValueChanged += new System.EventHandler(this.numericUpDown3_ValueChanged);
+			// 
+			// numericUpDown4
+			// 
+			this.numericUpDown4.Location = new System.Drawing.Point(16, 171);
+			this.numericUpDown4.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+			this.numericUpDown4.Name = "numericUpDown4";
+			this.numericUpDown4.Size = new System.Drawing.Size(120, 30);
+			this.numericUpDown4.TabIndex = 18;
+			this.numericUpDown4.ValueChanged += new System.EventHandler(this.numericUpDown4_ValueChanged);
+			// 
+			// numericUpDown2
+			// 
+			this.numericUpDown2.Location = new System.Drawing.Point(16, 102);
+			this.numericUpDown2.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+			this.numericUpDown2.Name = "numericUpDown2";
+			this.numericUpDown2.Size = new System.Drawing.Size(120, 30);
+			this.numericUpDown2.TabIndex = 17;
+			this.numericUpDown2.ValueChanged += new System.EventHandler(this.numericUpDown2_ValueChanged);
+			// 
+			// numericUpDown1
+			// 
+			this.numericUpDown1.Location = new System.Drawing.Point(16, 65);
+			this.numericUpDown1.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+			this.numericUpDown1.Name = "numericUpDown1";
+			this.numericUpDown1.Size = new System.Drawing.Size(120, 30);
+			this.numericUpDown1.TabIndex = 16;
+			this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+			// 
+			// TxtPlaka
+			// 
+			this.TxtPlaka.Location = new System.Drawing.Point(160, 254);
+			this.TxtPlaka.Name = "TxtPlaka";
+			this.TxtPlaka.Size = new System.Drawing.Size(145, 30);
+			this.TxtPlaka.TabIndex = 11;
+			// 
+			// label22
+			// 
+			this.label22.AutoSize = true;
+			this.label22.Location = new System.Drawing.Point(92, 260);
+			this.label22.Name = "label22";
+			this.label22.Size = new System.Drawing.Size(62, 24);
+			this.label22.TabIndex = 15;
+			this.label22.Text = "Plaka:";
+			// 
+			// BtnDepoDoldur
+			// 
+			this.BtnDepoDoldur.Location = new System.Drawing.Point(6, 304);
+			this.BtnDepoDoldur.Name = "BtnDepoDoldur";
+			this.BtnDepoDoldur.Size = new System.Drawing.Size(299, 36);
+			this.BtnDepoDoldur.TabIndex = 12;
+			this.BtnDepoDoldur.Text = "Depo Doldur";
+			this.BtnDepoDoldur.UseVisualStyleBackColor = true;
+			this.BtnDepoDoldur.Click += new System.EventHandler(this.BtnDepoDoldur_Click);
+			// 
 			// label14
 			// 
 			this.label14.AutoSize = true;
@@ -292,15 +383,6 @@
 			this.Txtkursunsuz95fiyat.TabIndex = 6;
 			this.Txtkursunsuz95fiyat.Text = "0";
 			// 
-			// BtnDepoDoldur
-			// 
-			this.BtnDepoDoldur.Location = new System.Drawing.Point(6, 304);
-			this.BtnDepoDoldur.Name = "BtnDepoDoldur";
-			this.BtnDepoDoldur.Size = new System.Drawing.Size(299, 36);
-			this.BtnDepoDoldur.TabIndex = 12;
-			this.BtnDepoDoldur.Text = "Depo Doldur";
-			this.BtnDepoDoldur.UseVisualStyleBackColor = true;
-			// 
 			// groupBox3
 			// 
 			this.groupBox3.Controls.Add(this.LblGazLitre);
@@ -319,55 +401,6 @@
 			this.groupBox3.Size = new System.Drawing.Size(393, 265);
 			this.groupBox3.TabIndex = 2;
 			this.groupBox3.TabStop = false;
-			// 
-			// progressBar1
-			// 
-			this.progressBar1.Location = new System.Drawing.Point(6, 70);
-			this.progressBar1.Maximum = 10000;
-			this.progressBar1.Name = "progressBar1";
-			this.progressBar1.Size = new System.Drawing.Size(280, 30);
-			this.progressBar1.TabIndex = 0;
-			// 
-			// progressBar2
-			// 
-			this.progressBar2.Location = new System.Drawing.Point(6, 106);
-			this.progressBar2.Maximum = 10000;
-			this.progressBar2.Name = "progressBar2";
-			this.progressBar2.Size = new System.Drawing.Size(280, 30);
-			this.progressBar2.TabIndex = 1;
-			// 
-			// progressBar3
-			// 
-			this.progressBar3.Location = new System.Drawing.Point(6, 141);
-			this.progressBar3.Maximum = 10000;
-			this.progressBar3.Name = "progressBar3";
-			this.progressBar3.Size = new System.Drawing.Size(280, 30);
-			this.progressBar3.TabIndex = 2;
-			// 
-			// progressBar4
-			// 
-			this.progressBar4.Location = new System.Drawing.Point(6, 176);
-			this.progressBar4.Maximum = 10000;
-			this.progressBar4.Name = "progressBar4";
-			this.progressBar4.Size = new System.Drawing.Size(280, 30);
-			this.progressBar4.TabIndex = 3;
-			// 
-			// progressBar5
-			// 
-			this.progressBar5.Location = new System.Drawing.Point(6, 211);
-			this.progressBar5.Maximum = 10000;
-			this.progressBar5.Name = "progressBar5";
-			this.progressBar5.Size = new System.Drawing.Size(280, 30);
-			this.progressBar5.TabIndex = 4;
-			// 
-			// label15
-			// 
-			this.label15.AutoSize = true;
-			this.label15.Location = new System.Drawing.Point(53, 26);
-			this.label15.Name = "label15";
-			this.label15.Size = new System.Drawing.Size(174, 24);
-			this.label15.TabIndex = 14;
-			this.label15.Text = "Depo Petrol Miktarı";
 			// 
 			// LblGazLitre
 			// 
@@ -414,6 +447,55 @@
 			this.LblKursunsuz95litre.TabIndex = 19;
 			this.LblKursunsuz95litre.Text = "0.00";
 			// 
+			// label15
+			// 
+			this.label15.AutoSize = true;
+			this.label15.Location = new System.Drawing.Point(53, 26);
+			this.label15.Name = "label15";
+			this.label15.Size = new System.Drawing.Size(174, 24);
+			this.label15.TabIndex = 14;
+			this.label15.Text = "Depo Petrol Miktarı";
+			// 
+			// progressBar5
+			// 
+			this.progressBar5.Location = new System.Drawing.Point(6, 211);
+			this.progressBar5.Maximum = 10000;
+			this.progressBar5.Name = "progressBar5";
+			this.progressBar5.Size = new System.Drawing.Size(280, 30);
+			this.progressBar5.TabIndex = 4;
+			// 
+			// progressBar4
+			// 
+			this.progressBar4.Location = new System.Drawing.Point(6, 176);
+			this.progressBar4.Maximum = 10000;
+			this.progressBar4.Name = "progressBar4";
+			this.progressBar4.Size = new System.Drawing.Size(280, 30);
+			this.progressBar4.TabIndex = 3;
+			// 
+			// progressBar3
+			// 
+			this.progressBar3.Location = new System.Drawing.Point(6, 141);
+			this.progressBar3.Maximum = 10000;
+			this.progressBar3.Name = "progressBar3";
+			this.progressBar3.Size = new System.Drawing.Size(280, 30);
+			this.progressBar3.TabIndex = 2;
+			// 
+			// progressBar2
+			// 
+			this.progressBar2.Location = new System.Drawing.Point(6, 106);
+			this.progressBar2.Maximum = 10000;
+			this.progressBar2.Name = "progressBar2";
+			this.progressBar2.Size = new System.Drawing.Size(280, 30);
+			this.progressBar2.TabIndex = 1;
+			// 
+			// progressBar1
+			// 
+			this.progressBar1.Location = new System.Drawing.Point(6, 70);
+			this.progressBar1.Maximum = 10000;
+			this.progressBar1.Name = "progressBar1";
+			this.progressBar1.Size = new System.Drawing.Size(280, 30);
+			this.progressBar1.TabIndex = 0;
+			// 
 			// groupBox4
 			// 
 			this.groupBox4.Controls.Add(this.LblKasaText);
@@ -424,31 +506,6 @@
 			this.groupBox4.TabIndex = 3;
 			this.groupBox4.TabStop = false;
 			// 
-			// label21
-			// 
-			this.label21.AutoSize = true;
-			this.label21.Location = new System.Drawing.Point(6, 31);
-			this.label21.Name = "label21";
-			this.label21.Size = new System.Drawing.Size(55, 24);
-			this.label21.TabIndex = 14;
-			this.label21.Text = "Kasa:";
-			// 
-			// label22
-			// 
-			this.label22.AutoSize = true;
-			this.label22.Location = new System.Drawing.Point(92, 260);
-			this.label22.Name = "label22";
-			this.label22.Size = new System.Drawing.Size(62, 24);
-			this.label22.TabIndex = 15;
-			this.label22.Text = "Plaka:";
-			// 
-			// TxtPlaka
-			// 
-			this.TxtPlaka.Location = new System.Drawing.Point(160, 254);
-			this.TxtPlaka.Name = "TxtPlaka";
-			this.TxtPlaka.Size = new System.Drawing.Size(145, 30);
-			this.TxtPlaka.TabIndex = 11;
-			// 
 			// LblKasaText
 			// 
 			this.LblKasaText.AutoSize = true;
@@ -458,52 +515,21 @@
 			this.LblKasaText.TabIndex = 24;
 			this.LblKasaText.Text = "0.00";
 			// 
-			// numericUpDown1
+			// label21
 			// 
-			this.numericUpDown1.Location = new System.Drawing.Point(16, 65);
-			this.numericUpDown1.Name = "numericUpDown1";
-			this.numericUpDown1.Size = new System.Drawing.Size(120, 30);
-			this.numericUpDown1.TabIndex = 16;
-			this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
-			// 
-			// numericUpDown2
-			// 
-			this.numericUpDown2.Location = new System.Drawing.Point(16, 102);
-			this.numericUpDown2.Name = "numericUpDown2";
-			this.numericUpDown2.Size = new System.Drawing.Size(120, 30);
-			this.numericUpDown2.TabIndex = 17;
-			this.numericUpDown2.ValueChanged += new System.EventHandler(this.numericUpDown2_ValueChanged);
-			// 
-			// numericUpDown3
-			// 
-			this.numericUpDown3.Location = new System.Drawing.Point(16, 138);
-			this.numericUpDown3.Name = "numericUpDown3";
-			this.numericUpDown3.Size = new System.Drawing.Size(120, 30);
-			this.numericUpDown3.TabIndex = 19;
-			this.numericUpDown3.ValueChanged += new System.EventHandler(this.numericUpDown3_ValueChanged);
-			// 
-			// numericUpDown4
-			// 
-			this.numericUpDown4.Location = new System.Drawing.Point(16, 171);
-			this.numericUpDown4.Name = "numericUpDown4";
-			this.numericUpDown4.Size = new System.Drawing.Size(120, 30);
-			this.numericUpDown4.TabIndex = 18;
-			this.numericUpDown4.ValueChanged += new System.EventHandler(this.numericUpDown4_ValueChanged);
-			// 
-			// numericUpDown5
-			// 
-			this.numericUpDown5.Location = new System.Drawing.Point(16, 211);
-			this.numericUpDown5.Name = "numericUpDown5";
-			this.numericUpDown5.Size = new System.Drawing.Size(120, 30);
-			this.numericUpDown5.TabIndex = 20;
-			this.numericUpDown5.ValueChanged += new System.EventHandler(this.numericUpDown5_ValueChanged);
+			this.label21.AutoSize = true;
+			this.label21.Location = new System.Drawing.Point(2, 31);
+			this.label21.Name = "label21";
+			this.label21.Size = new System.Drawing.Size(55, 24);
+			this.label21.TabIndex = 14;
+			this.label21.Text = "Kasa:";
 			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.IndianRed;
-			this.ClientSize = new System.Drawing.Size(1190, 682);
+			this.ClientSize = new System.Drawing.Size(1097, 682);
 			this.Controls.Add(this.groupBox4);
 			this.Controls.Add(this.groupBox3);
 			this.Controls.Add(this.groupBox2);
@@ -517,15 +543,15 @@
 			this.groupBox1.PerformLayout();
 			this.groupBox2.ResumeLayout(false);
 			this.groupBox2.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
 			this.groupBox3.ResumeLayout(false);
 			this.groupBox3.PerformLayout();
 			this.groupBox4.ResumeLayout(false);
 			this.groupBox4.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
 			this.ResumeLayout(false);
 
 		}

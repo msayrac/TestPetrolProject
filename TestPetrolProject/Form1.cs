@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Security.Policy;
 
 namespace TestPetrolProject
 {
@@ -86,47 +87,145 @@ namespace TestPetrolProject
 				LblGazLitre.Text = dr5[4].ToString();
 			}
 			connection.Close();
+
+			connection.Open();
+			SqlCommand command6 = new SqlCommand("Select * From TBLKASA", connection);
+
+			SqlDataReader dr6 = command6.ExecuteReader();
+
+			while (dr6.Read())
+			{
+				LblKasaText.Text = dr6[0].ToString();
+			}
+			connection.Close();
 		}
 
 		private void Form1_Load(object sender, EventArgs e)
 		{
 			listele();
-
-
 		}
 
 		private void numericUpDown1_ValueChanged(object sender, EventArgs e)
 		{
 			double kursunsuz95, litre, tutar;
-			kursunsuz95 =Convert.ToDouble(LblKursunsuz95.Text)*Convert.ToDouble(numericUpDown1.Value);
-			Txtkursunsuz95fiyat.Text =kursunsuz95.ToString();
+			litre = Convert.ToDouble(numericUpDown1.Value);
+			kursunsuz95 = Convert.ToDouble(LblKursunsuz95.Text);
+			tutar = kursunsuz95 * litre;
+			Txtkursunsuz95fiyat.Text = tutar.ToString();
 		}
 
 		private void numericUpDown2_ValueChanged(object sender, EventArgs e)
 		{
 			double kursunsuz97, litre, tutar;
-			kursunsuz97 = Convert.ToDouble(LblKursunsuz97.Text) * Convert.ToDouble(numericUpDown2.Value);
-			Txtkursunsuz97fiyat.Text = kursunsuz97.ToString();
+			litre = Convert.ToDouble(numericUpDown2.Value);
+			kursunsuz97 = Convert.ToDouble(LblKursunsuz97.Text);
+			tutar = kursunsuz97 * litre;
+			Txtkursunsuz97fiyat.Text = tutar.ToString();
 		}
 
 		private void numericUpDown3_ValueChanged(object sender, EventArgs e)
 		{
 			double EuroDizel, litre, tutar;
-			EuroDizel = Convert.ToDouble(LblEuroDizel.Text) * Convert.ToDouble(numericUpDown3.Value);
-			TxtEurodizelfiyat.Text = EuroDizel.ToString();
+			litre = Convert.ToDouble(numericUpDown3.Value);
+			EuroDizel = Convert.ToDouble(LblEuroDizel.Text);
+			tutar = EuroDizel * litre;
+			TxtEurodizelfiyat.Text = tutar.ToString();
 		}
 		private void numericUpDown4_ValueChanged(object sender, EventArgs e)
 		{
 			double yeniProDizel, litre, tutar;
-			yeniProDizel = Convert.ToDouble(LblYeniProDizel.Text) * Convert.ToDouble(numericUpDown4.Value);
-			Txtyeniprodizefiyat.Text = yeniProDizel.ToString();
+			litre = Convert.ToDouble(numericUpDown4.Value);
+			yeniProDizel = Convert.ToDouble(LblYeniProDizel.Text);
+			tutar = yeniProDizel * litre;
+			Txtyeniprodizefiyat.Text = tutar.ToString();
 		}
 
 		private void numericUpDown5_ValueChanged(object sender, EventArgs e)
 		{
 			double gaz, litre, tutar;
-			gaz = Convert.ToDouble(LblGaz.Text) * Convert.ToDouble(numericUpDown5.Value);
-			Txtgazfiyat.Text = gaz.ToString();
+			litre = Convert.ToDouble(numericUpDown5.Value);
+			gaz = Convert.ToDouble(LblGaz.Text);
+			tutar = gaz * litre;
+			Txtgazfiyat.Text = tutar.ToString();
+		}
+
+		private void BtnDepoDoldur_Click(object sender, EventArgs e)
+		{
+			if (numericUpDown1.Value != 0)
+			{
+				connection.Open();
+				SqlCommand komut = new SqlCommand("insert into TBLHARAKET (PLAKA,BENZINTURU,LITRE,FIYAT) values (@p1,@p2,@p3,@p4)", connection);
+
+				komut.Parameters.AddWithValue("@p1", TxtPlaka.Text);
+				komut.Parameters.AddWithValue("@p2", "Kursunsuz95");
+				double litre = Convert.ToDouble(numericUpDown1.Value);
+				double kursunsuz95 = Convert.ToDouble(LblKursunsuz95.Text);
+
+				komut.Parameters.AddWithValue("@p3", litre.ToString());
+				double tutar = litre * kursunsuz95;
+				komut.Parameters.AddWithValue("@p4", decimal.Parse(tutar.ToString()));
+
+				komut.ExecuteNonQuery();
+				connection.Close();
+
+				connection.Open();
+				SqlCommand komut2 = new SqlCommand("update TBLKASA Set MIKTAR = MIKTAR+@p1", connection);
+
+				komut2.Parameters.AddWithValue("@p1", decimal.Parse(Txtkursunsuz95fiyat.Text));
+				komut2.ExecuteNonQuery();
+
+				connection.Close();
+				MessageBox.Show("Satış Yapıldı");
+				connection.Open();
+
+				SqlCommand komut3 = new SqlCommand("update TBLBENZIN Set STOK=STOK-@p1 Where PETROLTUR='Kursunsuz95'", connection);
+				komut3.Parameters.AddWithValue("@p1", numericUpDown1.Value);
+				komut3.ExecuteNonQuery();
+				connection.Close();
+				listele();
+			}
+
+			if (numericUpDown2.Value != 0)
+			{
+				connection.Open();
+				SqlCommand komut = new SqlCommand("insert into TBLHARAKET (PLAKA,BENZINTURU,LITRE,FIYAT) values (@p1,@p2,@p3,@p4)", connection);
+
+				komut.Parameters.AddWithValue("@p1", TxtPlaka.Text);
+				komut.Parameters.AddWithValue("@p2", "Kursunsuz97");
+				double litre = Convert.ToDouble(numericUpDown2.Value);
+				double Kursunsuz97 = Convert.ToDouble(LblKursunsuz97.Text);
+
+				komut.Parameters.AddWithValue("@p3", litre.ToString());
+				double tutar = litre * Kursunsuz97;
+				komut.Parameters.AddWithValue("@p4", decimal.Parse(tutar.ToString()));
+
+				komut.ExecuteNonQuery();
+				connection.Close();
+
+				connection.Open();
+				SqlCommand komut2 = new SqlCommand("update TBLKASA Set MIKTAR = MIKTAR+@p1", connection);
+
+				komut2.Parameters.AddWithValue("@p1", decimal.Parse(Txtkursunsuz97fiyat.Text));
+				komut2.ExecuteNonQuery();
+
+				connection.Close();
+				MessageBox.Show("Satış Yapıldı");
+				connection.Open();
+
+				SqlCommand komut3 = new SqlCommand("update TBLBENZIN Set STOK=STOK-@p1 Where PETROLTUR='Kursunsuz97'", connection);
+				komut3.Parameters.AddWithValue("@p1", numericUpDown2.Value);
+				komut3.ExecuteNonQuery();
+				connection.Close();
+				listele();
+			}
+
+
+
+
+
+
+
+
 		}
 	}
 }
